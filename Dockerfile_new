@@ -1,0 +1,6 @@
+FROM artifactory.cloud.capitalone.com/bogie/spring-boot-jdk8:latest-onbuild
+
+# ensures the container runs as a non-root user
+EXPOSE 8080
+ADD /target/api.jar api.jar
+ENTRYPOINT["java","-jar","api.jar"]
